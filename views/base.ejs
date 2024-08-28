@@ -1,0 +1,55 @@
+<%- include('header') -%>
+
+<div class="login-card">
+  <h3 class="text-center mb-4">Login</h3>
+
+  <% if (error) { %>
+    <div class="alert alert-danger text-center">
+        <%= error %>
+    </div>
+  <% } %>
+
+  <% if (logout) { %>
+    <div class="alert alert-success text-center">Logged out successfully.</div>
+  <% } %>
+
+  <form action="/route/login" method="POST" class="pt-3" id="loginForm" autocomplete="off">
+    <div class="mb-3">
+      <label for="email" class="form-label">Email address</label>
+      <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email" autocomplete="off" required>
+    </div>
+    <div class="mb-3">
+      <label for="password" class="form-label">Password</label>
+      <input type="password" class="form-control" id="password" name="password" placeholder="Enter your password" autocomplete="off" required>
+    </div>
+    <div class="d-grid">
+      <button type="submit" class="btn login-btn">Login</button>
+    </div>
+  </form>
+</div>
+
+<script>
+  (function() {
+    // Function to clear URL parameters
+    function clearUrlParameters() {
+        if (window.history.replaceState) {
+            var cleanUrl = window.location.protocol + "//" + window.location.host + window.location.pathname;
+            window.history.replaceState({}, document.title, cleanUrl);
+        }
+    }
+
+    // Clear URL parameters on page load
+    clearUrlParameters();
+
+    // Prevent caching of the page
+    window.onpageshow = function(event) {
+        if (event.persisted) {
+            window.location.reload();
+        }
+    };
+
+    // Optional: Clear form fields on page load
+    document.getElementById('loginForm').reset();
+})();
+</script>
+<%- include('footer') -%>

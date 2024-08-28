@@ -1,0 +1,15 @@
+<%- include('header') -%>
+
+<div class="container dashboard-container" id="dashboard">
+    <div class="card dashboard-card">
+        <div class="card-body">
+            <h1 class="card-title text-center text-white">Welcome to the Dashboard</h1>
+            <p class="card-text text-center text-white">Email: <%= user %></p>
+            <div class="text-center">
+                <a href="/route/logout" class="btn btn-danger">LogOut</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<%- include('footer') -%>

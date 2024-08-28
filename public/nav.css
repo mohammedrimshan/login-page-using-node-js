@@ -1,0 +1,62 @@
+body {
+  background-image: url('assets/uwp4232864.png');
+  background-size: cover;
+  background-position: center;
+  color: white;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.login-card {
+  background-color: transparent;
+  padding: 2rem;
+  border: 1px solid aliceblue;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  opacity: 1;
+  transform: scale(1);
+  backdrop-filter: blur(8px);
+  transition: background-color 0.5s ease;
+  width: 100%;
+  max-width: 400px; 
+}
+
+.login-card:hover {
+  background-color: #1a1b1c;
+  }
+
+.form-control {
+  background-color: #6c757d;
+  color: white;
+  border: none;
+}
+
+.form-control:focus {
+  background-color: #adb5bd;
+  color: #212529;
+  border: none;
+  box-shadow: none;
+}
+
+.login-btn {
+  background-color: transparent;
+  color: white;
+  border: 1px solid white;
+  transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+.login-btn:hover {
+  background-color: white;
+  color: black;
+}
+
+a {
+  color: #adb5bd;
+}
+
+a:hover {
+  color: #007bff;
+}
